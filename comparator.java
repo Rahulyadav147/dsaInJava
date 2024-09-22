@@ -58,16 +58,27 @@ public class comparator {
 //    			else
 //    				return -1;
 //    		}
-//    	};	
-    	
-    	Comparator<Student> com=(i,j) -> i.age > j.age?1:-1;
+//    	};	   	
+    	// Comparator<Student> com=(i,j) -> j.name.compareToIgnoreCase(i.name);
+		
+		//<*****************> IMP
 		// Note: returning 1 means the sort function places 1st(i) element after 2nd(j) element :-1 means 1st element comes before 2nd element 
      	// So if you want to sort in ascending order : 
 		// i.age>j.age  : (i.e. i > j): the order should be j,i for ascending so return 1 because you want to  place i after j 
+		// sorting by age and if same then by name:
+		Comparator<Student> com = (i, j) -> {
+			int ageComparison = Integer.compare(i.age, j.age);
+			if (ageComparison != 0) {
+				return ageComparison;
+			} else {
+				return i.name.compareToIgnoreCase(j.name);
+			}
+		};
+		
     	List<Student> studs= new ArrayList<>();
     	studs.add(new Student(21,"Navin"));
     	studs.add(new Student(12,"John"));
-    	studs.add(new Student(18,"Parul"));
+    	studs.add(new Student(21,"Parul"));
     	studs.add(new Student(20,"Kiran"));
 
 //    	Collections.sort(nums);

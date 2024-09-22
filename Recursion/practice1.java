@@ -39,8 +39,8 @@ public class practice1 {
             output.append(str.charAt(i));
             printSubsequence(str, output, i+1);
            // exclude string first(same as previous)
-           output.deleteCharAt(output.length()-1);
-           printSubsequence(str, output, i+1);
+            output.deleteCharAt(output.length()-1);
+            printSubsequence(str, output, i+1);
            
           
            
@@ -126,29 +126,29 @@ public class practice1 {
         String str="ab";
         StringBuilder output=new StringBuilder("");
         printSubsequence(str,output,0);
-        int array[]={1,2};
-        int target=3;
+        int array[]={1,2,5};
+        int target=11;
         System.out.println(coinChange(array,target));
-        int ans=maximumSegment(7,3,8,5);
-        if(ans<0)System.out.println(0);
-        else{
-         System.out.println(ans);
-        }
-        System.out.println();
-        int arr1[]={2,1,6,5};
-        int sum=0;
-        System.out.println(maxNonContguousSum(arr1,sum,0));
+      //   int ans=maximumSegment(7,3,8,5);
+      //   if(ans<0)System.out.println(0);
+      //   else{
+      //    System.out.println(ans);
+      //   }
+      //   System.out.println();
+      //   int arr1[]={2,1,6,5};
+      //   int sum=0;
+      //   System.out.println(maxNonContguousSum(arr1,sum,0));
 
 
         // to implement pass by reference in java we need to use integer or character array  as java has no pass by value concept
-        String s="abcdada";
-        char ch='a';
-        int answer[]=new int [4];
-        answer[0]=-1;
-        int i=0;
-      //   lastOccurence(s,ch,answer,i);
-        lastOccurence(s,ch,i,answer);
-        System.out.println(answer[0]);
+      //   String s="abcdada";
+      //   char ch='a';
+      //   int answer[]=new int [4];
+      //   answer[0]=-1;
+      //   int i=0;
+      // //   lastOccurence(s,ch,answer,i);
+      //   lastOccurence(s,ch,i,answer);
+      //   System.out.println(answer[0]);
         
 
     }

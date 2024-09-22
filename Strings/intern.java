@@ -4,7 +4,7 @@ public class intern {
     public static void main(String[] args) {
         String s1 = "hello";
 String s2 = new String("hello");
-String s3 = s1.intern(); // Returns the reference to "hello" from the pool
+String s3 = s1.intern(); // Returns the reference to "hello" from the pool which is with s1 as s2 is in heap 
 System.out.println(s1 == s2); // false
 System.out.println(s1== s3); // true
 

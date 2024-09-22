@@ -8,12 +8,10 @@ public class StringCompression {
 
         for(int i=0; i<str.length(); i++) {
             Integer count = 1;// Integer used because we can later use count.toString which is not possible on primitive data types
-
             while(i < str.length()-1 && str.charAt(i) == str.charAt(i+1)) {
                 count++;
                 i++;
             }
-
             newStr += str.charAt(i);
             newStr = count > 1 ? newStr + count.toString() : newStr;
         }

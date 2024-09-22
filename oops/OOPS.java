@@ -13,8 +13,7 @@ public class OOPS {
         Pen p4=new Pen(p);// object p is copied to object p4: 
         System.out.println(p4.color);
     }
-
-}
+} 
     class Pen{
     String color;// by default public 
     int price;

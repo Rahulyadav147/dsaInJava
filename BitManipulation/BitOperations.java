@@ -42,8 +42,8 @@ public class BitOperations {
 
     //Clear Bits in Range (i,j)
     public static int clearBitsinRange(int n, int i, int j) {
-        int a = ~0<<i;
-        int b = (1<<i)-1;
+        int a = (-1)<<(j);
+        int b = ~((-1)<<i);// or do 1<<i-1 :i=2 then 2^2=4 ,4-1=3->11 
         int bitMask = a | b;
         return n & bitMask;
     }
@@ -76,16 +76,56 @@ public class BitOperations {
         }
         return setBits;
     }
+    public static void dB(int n){
+        int bN=0;
+        int i=0;
+          while(n>0){
+            int rem=n%2;
+            bN+=rem*Math.pow(10,i);
+            i++;
+            n/=2;
+
+          }
+          System.out.println(bN);
+    }
+    public static void bD(int n){
+        int dN=0;
+        int i=0;
+          while(n>0){
+            int rem=n%10;
+            dN+=rem*Math.pow(2,i);
+            i++;
+            n/=10;
+
+          }
+          System.out.println(dN);
+    }
+
+    public static int fastExponentitation(int base,int pow){
+        int result=1;
+        while(pow>0){
+            if((pow&1)!=0){
+              result*=base;
+            }
+            base*=base;
+            pow>>=1;
+        }
+        return result;
+    }
     public static void main(String args[]) {
-       System.out.println(countSetBits(9)); 
-       
+        System.out.println(fastExponentitation(2, 3));
+    //    System.out.println(countSetBits(9)); 
+    //    int x=10;
+    //    dB(x);
+    //    bD(1010);
+    System.out.println(clearBitsinRange(15, 2, 3));
        // odd or even
-       int n = 10;
-       int bitMask = 1;
-       if((n & bitMask) == 0) {
-           System.out.println("even");
-       } else {
-           System.out.println("odd");
-       }
+    //    int n = 10;
+    //    int bitMask = 1;
+    //    if((n & bitMask) == 0) {
+    //        System.out.println("even");
+    //    } else {
+    //        System.out.println("odd");
+    //    }
     }
 }

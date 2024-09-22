@@ -153,18 +153,18 @@ public class practice {
         return firstOccurence(arr, startPos+1,  key);
      }
 
-     public static int lastOccurence(int arr[],int startPos,int key){
+     public static int lastOccurence(int arr[],int endPos,int key){
         // base case
-        if(startPos<0){
+        if(endPos<0){
             return -1;
         }
        
         // ek case solve kar do
-        if(arr[startPos]==key){
-            return startPos;
+        if(arr[endPos]==key){
+            return endPos;
         }
         // baki recursion sambhal lega
-        return lastOccurence(arr, startPos-1, key);
+        return lastOccurence(arr, endPos-1, key);
      }
 
 
@@ -180,7 +180,7 @@ public class practice {
      }
      public static int optimizedPower(int x,int n){
        // base case
-       if(n==0)return 1;   
+       if(n==0)return 1;
        int halfPower=optimizedPower(x, n/2);// it is done to reduce multiple function call
        int halfPowerSq=halfPower*halfPower;
        // for even
@@ -275,13 +275,16 @@ public static int friendPairs(int n) {
             return;
         }
 
-        //kaam
-        //here we are starting with the 1 as last place
-        printBinString(n-1,str+"0",0); 
 
-        if(lastPlace == 0){
+         if(lastPlace==0){// if last place is zero u can keep either 0 or 1 in next place
+            printBinString(n-1,str+"0",0); 
             printBinString(n-1,str+"1",1);
-        }
+         }
+         else{// if last palce is 1 just keep 0 only
+            printBinString(n-1,str+"0",0); 
+         }
+        // we can put zero outside if as it is in both if and else
+
 
     }
     public static void main(String[] args) {

@@ -16,7 +16,7 @@ public class capitaliseFirstLetter {
             }
            
         }
-        String s2=s1.toString();
+        String s2=s1.toString();// important 
         System.out.println(s2);
     }
 }

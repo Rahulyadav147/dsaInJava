@@ -32,9 +32,10 @@ public class mergeSort {
             right++;
         }
             
-           // copy tempt to arr    this is the only area where i made error (be careful)
-           // This is because the elements in the temporary array are shifted by 'low' positions compared to the original array.
-         
+        //Since the merged elements in temp[] correspond to the portion of the array from low to high, you want to place them back exactly in those positions in the original arr[].
+        //The temp[] array holds the merged result, starting at index 0, but you need to copy these elements to arr[], starting at index low. That’s why the expression temp[j - low] is used when copying back to arr[].
+        //j is the index in the original array arr[] (from low to high).
+        //j - low gives the correct corresponding index in the temp[] array because temp[] was populated starting from index 0.
            for(int j=low;j<=high;j++){
             arr[j]=temp[j-low];// temp[low-low],temp[low+1-low]....-> temp[0],temp[1]....
            }

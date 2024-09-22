@@ -21,18 +21,15 @@ public class matrix_spiral_print{
         }
 
         // printing bottom part
+        // no need to put any stop conditoin because  for loop condition will not overlap 
         for(int i = endCol-1; i >= startCol; i--){
-            if(startCol == endCol){
-                break;
-           }
+           
             System.out.print(matrix[endCol][i]+" ");
         }
 
         // printing left side part
         for(int i = endRow-1; i>= startRow+1; i--){
-            if(startRow == endRow){
-                 break;
-            }
+            
             System.out.print(matrix[i][startCol]+" ");
         }
 
@@ -49,11 +46,15 @@ public class matrix_spiral_print{
 
     public static void main(String args[]){
 
-        int matrix [][] = { 
-            {1,2,3},
-            {8,9,4},
-            {7,6,5}
-            };    
+        int[][] matrix = {
+            { 1,  2,  3,  4,  5,  6},
+            {20, 21, 22, 23, 24,  7},
+            {19, 32, 33, 34, 25,  8},
+            {18, 31, 36, 35, 26,  9},
+            {17, 30, 29, 28, 27, 10},
+            {16, 15, 14, 13, 12, 11}
+        };
+          
         
         spiralPrint(matrix);
     }

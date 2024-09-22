@@ -10,8 +10,7 @@ public class LinkedList {
             this.data=data;
             this.next=null;
         }
-    }  
-    
+    } 
     // NOTE: head=null   means head's reference is null i.e. head does not exist
     // or any node=null means it does not exists
     public static Node head;
